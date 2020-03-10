@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <WebView
+        android:id="@+id/idWebView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
+
+
+    <LinearLayout
+        android:id="@+id/Linear"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="@drawable/resdddd2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="#fff"
+                android:text="请填写邀请码"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/btnCo"
+                android:layout_alignParentRight="true"
+                android:text="X"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/btnSHOUJI"
+                android:inputType="number"
+                android:padding="5dp"
+                android:maxLength="11"
+                android:paddingRight="10dp"
+                android:background="@drawable/resdddd3"
+                android:hint="请填写手机"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/idYAOQINGMA"
+                android:padding="5dp"
+                android:inputType="number"
+                android:paddingRight="10dp"
+                android:background="@drawable/resdddd3"
+                android:hint="请填写邀请码"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+            <Button
+                android:id="@+id/btnSuer"
+                android:background="@drawable/resdddd1"
+                android:text="确定"
+                android:textColor="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <Button
+            android:id="@+id/btnClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/resdddd"
+            android:text="填写邀请码"
+            android:textColor="#fff" />
+        <!--<TextView-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:text="主动一点，今夜就会有故事发生"-->
+            <!--android:textColor="#fff"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
+    </LinearLayout>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageView2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:srcCompat="@drawable/login" />-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageView3"-->
+        <!--android:layout_width="45dp"-->
+        <!--android:layout_height="45dp"-->
+        <!--android:layout_below="@+id/imageView2"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_marginStart="50dp"-->
+        <!--android:layout_marginTop="30dp"-->
+        <!--app:srcCompat="@drawable/username" />-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageView4"-->
+        <!--android:layout_width="45dp"-->
+        <!--android:layout_height="45dp"-->
+        <!--android:layout_below="@+id/imageView3"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_marginStart="50dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--app:srcCompat="@drawable/psw" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/editText"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/imageView2"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_marginStart="10dp"-->
+        <!--android:layout_marginTop="30dp"-->
+        <!--android:layout_marginEnd="50dp"-->
+        <!--android:layout_toEndOf="@+id/imageView3"-->
+        <!--android:ems="10"-->
+        <!--android:hint="请输入账号"-->
+        <!--android:inputType="textPersonName" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/editText2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/editText"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_marginStart="10dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_marginEnd="50dp"-->
+        <!--android:layout_toEndOf="@+id/imageView4"-->
+        <!--android:ems="10"-->
+        <!--android:hint="请输入密码"-->
+        <!--android:inputType="textPassword" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/main_login_button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/imageView2"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_marginStart="50dp"-->
+        <!--android:layout_marginTop="160dp"-->
+        <!--android:backgroundTint="#157EFB"-->
+        <!--android:gravity="center"-->
+        <!--android:text="登录"-->
+        <!--android:textColor="#fff" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/main_regien_button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/imageView2"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_marginTop="160dp"-->
+        <!--android:layout_marginEnd="50dp"-->
+        <!--android:backgroundTint="#157EFB"-->
+        <!--android:gravity="center"-->
+        <!--android:text="注册"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:textColor="#fff"-->
+
+        <!--/>-->
+</RelativeLayout>

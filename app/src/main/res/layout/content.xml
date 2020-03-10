@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/content_phone_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="请输入用户手机号"
+            android:inputType="phone"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:textAlignment="center"
+            android:textColor="#B1B0B0"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/content_qdm_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="请输入渠道码"
+            android:inputType="phone"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:textAlignment="center"
+            android:textColor="#B1B0B0"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>
+
