@@ -1,6 +1,7 @@
 package com.example.qingliao;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // 声明一个集合，在后面的代码中用来存储用户拒绝授权的权
     List<String> mPermissionList = new ArrayList<>();
 
+    public AlertDialog alertDialog2;
     private Button btn_register;
     private Button btn_login;
     private EditText editText;
@@ -161,7 +164,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 handler.proceed();//解决webview 加载https 出现没内容
             }
         });
-
     }
 
     private void initDialog() {
@@ -224,19 +226,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initPermissions() {
         if (isFirst()){
             //对所有权限进行判断是否给与权限，没有的话进行请求
-            if ((!PermissionUtil.hasSelfPermission(this, permissions))) {
-                for (int i = 0; i < permissions.length; i++) {
-                    //                if (ContextCompat.checkSelfPermission(MainActivity_3.this, permissions[i]) != PackageManager.PERMISSION_GRANTED) {
-                    mPermissionList.add(permissions[i]);
-                    //                }
-                }
-                if (!mPermissionList.isEmpty()) {//未授予的权限为空，表示都授予了
-                    //请求权限方法
-                    String[] permissions = mPermissionList.toArray(new String[mPermissionList.size()]);//将List转为数组
-                    //1.目标地址，2.请求权限,3.请求代码
-                    ActivityCompat.requestPermissions(this, permissions, PERMISSIONS_STATE_CODE_BASIC_INFORMATION);
-                }
-            }
+            applyPermission();
         }else {
             if ((!PermissionUtil.hasSelfPermission(this, permissions))) {
                 for (int i = 0; i < permissions.length; i++) {
@@ -253,7 +243,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         }
+
+        alertDialog2 = new AlertDialog.Builder(this)
+                .setTitle("提醒")
+                .setMessage("如果您同意弹出的权限便可使用程序，如未弹出请在\"手机设置\"中的\"权限管理\"中找到本应用，并打开相应权限，方可使用!")
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {//添加"Yes"按钮
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        applyPermission();
+                     }
+                })
+
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {//添加取消
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this, "未授权权限", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .create();
        }
+
+    public void applyPermission() {
+        if ((!PermissionUtil.hasSelfPermission(this, permissions))) {
+            for (int i = 0; i < permissions.length; i++) {
+                //                if (ContextCompat.checkSelfPermission(MainActivity_3.this, permissions[i]) != PackageManager.PERMISSION_GRANTED) {
+                mPermissionList.add(permissions[i]);
+                //                }
+            }
+            if (!mPermissionList.isEmpty()) {//未授予的权限为空，表示都授予了
+                //请求权限方法
+                String[] permissions = mPermissionList.toArray(new String[mPermissionList.size()]);//将List转为数组
+                //1.目标地址，2.请求权限,3.请求代码
+                ActivityCompat.requestPermissions(this, permissions, PERMISSIONS_STATE_CODE_BASIC_INFORMATION);
+            }
+        }
+    }
 
 
     @Override
@@ -383,6 +407,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(this, "渠道码长度为6位,请输入正确的渠道码！", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                if (!PermissionUtil.hasSelfPermission(this, permissions)){
+                    alertDialog2.show();
+                    return;
+                }
+
                 String json;
                 String phone = btnSHOUJI.getText().toString();
                 String qdm = idYAOQINGMA.getText().toString();

@@ -34,7 +34,6 @@ public class LocationUtil {
             //如果是GPS定位
             locationProvider = LocationManager.GPS_PROVIDER;
         } else {
-            Toast.makeText(context, "没有可用的位置提供器", Toast.LENGTH_SHORT).show();
             Log.d("onRequestPermissionsResultGps","没有可用的位置提供器");
             return lal;
         }
